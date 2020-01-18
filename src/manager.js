@@ -53,7 +53,7 @@ class Manager {
     }
 
     static showItems(callback) {
-        return inquirer.prompt([
+        inquirer.prompt([
             {
                 type: 'list',
                 name: 'option',
