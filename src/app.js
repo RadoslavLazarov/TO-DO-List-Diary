@@ -1,12 +1,16 @@
 const inquirer = require('inquirer');
 const manager = require('./manager');
 
-class Menu {
+class App {
     constructor() {
         this.action = '';
     }
 
-    static show() {
+    static start() {
+        return this.showMenu();
+    }
+
+    static showMenu() {
         inquirer.prompt([
             {
                 type: 'list',
@@ -16,30 +20,30 @@ class Menu {
             }
         ]).then((answers) => {
             this.action = answers.option;
-            return this.аctions();
+            return this.menuActions();
         });
     }
 
-    static аctions() {
+    static menuActions() {
         switch (this.action) {
             case 'Add item':
                 manager.addItem(() => {
-                    this.show();
+                    this.showMenu();
                 });
                 break;
             case 'Remove item':
                 manager.removeItems(() => {
-                    this.show();
+                    this.showMenu();
                 });
                 break;
             case 'Mark as complete':
                 manager.completeItems(() => {
-                    this.show();
+                    this.showMenu();
                 });
                 break;
             case 'Show list':
                 manager.showItems(() => {
-                    this.show();
+                    this.showMenu();
                 });
                 break;
             case 'Exit':
@@ -48,4 +52,4 @@ class Menu {
     }
 }
 
-module.exports = Menu;
+module.exports = App;

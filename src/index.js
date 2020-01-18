@@ -1,4 +1,3 @@
-const menu = require('./menu');
+const app = require('./app');
 
-// Start the app
-menu.show();
+app.start();
