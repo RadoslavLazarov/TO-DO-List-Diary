@@ -6,7 +6,7 @@ class Menu {
         this.action = '';
     }
 
-    static showMenu(callback) {
+    static show() {
         inquirer.prompt([
             {
                 type: 'list',
@@ -16,30 +16,30 @@ class Menu {
             }
         ]).then((answers) => {
             this.action = answers.option;
-            return this.menuAction(callback);
+            return this.аction();
         });
     }
 
-    static menuAction(callback) {
+    static аction() {
         switch (this.action) {
             case 'Add item':
                 manager.addItem(() => {
-                    callback();
+                    this.show();
                 });
                 break;
             case 'Remove item':
                 manager.removeItems(() => {
-                    callback();
+                    this.show();
                 });
                 break;
             case 'Mark as complete':
                 manager.completeItems(() => {
-                    callback();
+                    this.show();
                 });
                 break;
             case 'Show list':
                 manager.showItems(() => {
-                    callback();
+                    this.show();
                 });
                 break;
             case 'Exit':

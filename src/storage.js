@@ -28,7 +28,6 @@ class Storage {
             return deleted.values.indexOf(el.value) == -1;
         });
     }
-
 }
 
 module.exports = new Storage();
