@@ -16,11 +16,11 @@ class Menu {
             }
         ]).then((answers) => {
             this.action = answers.option;
-            return this.аction();
+            return this.аctions();
         });
     }
 
-    static аction() {
+    static аctions() {
         switch (this.action) {
             case 'Add item':
                 manager.addItem(() => {
