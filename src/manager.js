@@ -77,19 +77,6 @@ class Manager {
             return callback();
         });
     }
-
-    static showMenu(callback) {
-        return inquirer.prompt([
-            {
-                type: 'list',
-                message: 'Choose an option:',
-                name: 'option',
-                choices: ['Add item', 'Remove item', 'Mark as complete', 'Show list', 'Exit']
-            }
-        ]).then((answers) => {
-            return callback(answers);
-        });
-    }
 }
 
 module.exports = Manager;
