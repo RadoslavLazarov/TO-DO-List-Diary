@@ -1,0 +1,14 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "TO-DO List Diary",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Radoslav Lazarov",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.0.3"
+  }
+}
