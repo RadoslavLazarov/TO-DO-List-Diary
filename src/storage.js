@@ -1,6 +1,7 @@
 class Storage {
     constructor() {
         this.items = [];
+        this.id = 0;
     }
 
     get() {
@@ -8,11 +9,9 @@ class Storage {
     }
 
     save(item) {
-        /* inquirer module uses name to display in list
-           and value to save in the answers hash */
-        const id = this.items.length + 1;
-        const newItem = { name: item, value: id, completed: false }
-        return this.items.push(newItem);
+        this.id++;
+        const newItem = { name: item, value: this.id, completed: false }
+        this.items.push(newItem);
     }
 
     update(completed) {
