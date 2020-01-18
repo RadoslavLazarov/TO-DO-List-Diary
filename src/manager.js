@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-
 const storage = require('./storage');
 
 class Manager {

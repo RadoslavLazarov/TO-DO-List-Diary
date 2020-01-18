@@ -1,5 +1,4 @@
 const menu = require('./menu');
 
-(function run() {
-    menu.show();
-})();
+// Start the app
+menu.show();
