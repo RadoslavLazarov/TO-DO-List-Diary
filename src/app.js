@@ -7,10 +7,10 @@ class App {
     }
 
     static start() {
-        return this.showMenu();
+        return this.menuShow();
     }
 
-    static showMenu() {
+    static menuShow() {
         inquirer.prompt([
             {
                 type: 'list',
@@ -28,22 +28,22 @@ class App {
         switch (this.action) {
             case 'Add item':
                 manager.addItem(() => {
-                    this.showMenu();
+                    this.menuShow();
                 });
                 break;
             case 'Remove item':
                 manager.removeItems(() => {
-                    this.showMenu();
+                    this.menuShow();
                 });
                 break;
             case 'Mark as complete':
                 manager.completeItems(() => {
-                    this.showMenu();
+                    this.menuShow();
                 });
                 break;
             case 'Show list':
                 manager.showItems(() => {
-                    this.showMenu();
+                    this.menuShow();
                 });
                 break;
             case 'Exit':
